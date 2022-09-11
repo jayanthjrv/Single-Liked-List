@@ -1,0 +1,14 @@
+// Finding length of SingleLinkedList
+    public void length(){
+        if(head==null){
+            System.out.println(0);
+        }
+        else{
+        SinglyLinkedList current = head; int count=0;
+        while(current!=null){
+            count++;
+            current = current.next;
+        }
+        System.out.println("Length of SingleLinkedList: "+count);
+        }
+    }

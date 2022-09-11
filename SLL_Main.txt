@@ -1,0 +1,42 @@
+// Main method
+class Main{
+    public static void main (String[] args) {
+        
+        Main jrv = new Main();
+		
+        /* Static insertion of elements
+        jrv.head = new SinglyLinkedList(109);
+        SinglyLinkedList second = new SinglyLinkedList(999);
+		SinglyLinkedList third = new SinglyLinkedList(111);
+        jrv.head.next = second;
+		second.next = third;
+        */
+		
+        jrv.insertFirst(109);   jrv.display();
+        jrv.insertLast(999);    jrv.display();
+        jrv.insert(111,1);      jrv.display();
+        jrv.insert(901,3);      jrv.display();
+        jrv.insert(0,2);      jrv.display();
+        
+        /*jrv.deleteFirst();    jrv.display();
+        jrv.deleteLast();       jrv.display();
+        jrv.delete(2);          jrv.display();
+        jrv.length();*/
+        
+        int value = jrv.search(901);
+        if(value!=0){System.out.println("Search key ("+value+") found in the list!!!");}
+        else{System.out.println("Search key not found in the list!!!");}
+        
+        System.out.println();
+        
+        jrv.display();
+        jrv.reverse(); jrv.display();
+        jrv.sort(); jrv.display();
+        
+        System.out.println();
+        
+        jrv.middleElement(); jrv.elementAtposition(1);
+        jrv.length();
+        
+    }
+}
