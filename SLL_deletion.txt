@@ -1,0 +1,43 @@
+    // Deleting element at first position
+    public SinglyLinkedList deleteFirst(){
+        System.out.println("Deleting(first element):");
+        if(head==null)
+            return null;
+        SinglyLinkedList temp = head;
+        head = head.next;
+        temp.next = null;
+        return temp;
+    }
+    // Deleting element at last position
+    public SinglyLinkedList deleteLast(){
+        if(head==null || head.next == null){
+            System.out.println("Deleting(last element):");
+            return head;
+        }
+        SinglyLinkedList current = head;
+        SinglyLinkedList previous = null;
+        while(current.next!=null){
+            previous = current;
+            current = current.next;
+        }
+        previous.next = null;
+        System.out.println("Deleting(last element):");
+        return current;
+    }
+    // Deleting element at specified position
+    public void delete(int position){
+        if(position==1){
+            System.out.println("Deleting(element at position "+position+"):");
+            head = head.next;
+        }
+        else{
+            SinglyLinkedList previous = head; int count=1;
+            while(count<position-1){
+                count++;
+                previous = previous.next;
+            }
+            SinglyLinkedList current = previous.next;
+            System.out.println("Deleting(element at position "+position+"):");
+            previous.next = current.next;
+        }
+    }

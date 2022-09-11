@@ -1,0 +1,42 @@
+//Inserting at first
+    public void insertFirst(int value){
+        System.out.println("Inserting "+value+" at first position:");
+        SinglyLinkedList newNode = new SinglyLinkedList(value);
+        newNode.next = head;
+        head = newNode;
+    }
+    //Insert at last
+    public void insertLast(int value){
+        System.out.println("Inserting "+value+" at last position:");
+        SinglyLinkedList newNode = new SinglyLinkedList(value);
+        if(head==null){
+            newNode.next = head;
+            head = newNode;
+        }
+        else{
+            SinglyLinkedList current = head;
+            while(current.next!=null){
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+    // Insert at specified position
+    public void insert(int value, int position){
+        System.out.println("Inserting "+value+" at position no."+position+":");
+        SinglyLinkedList newNode = new SinglyLinkedList(value);
+        if(position==1){
+            newNode.next = head;
+            head = newNode;
+        }
+        else{
+            SinglyLinkedList previous = head; int count=1;
+            while(count<position){
+                previous = previous.next;
+                count++;
+            }
+            SinglyLinkedList current = previous.next;
+            previous.next = newNode;
+            newNode.next = current;
+        }
+	}
